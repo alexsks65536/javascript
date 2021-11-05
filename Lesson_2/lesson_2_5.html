@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5</title>
+</head>
+<body>
+	<Script>
+		"use strict";
+		function sum(arg1, arg2) {  //Функция сложения
+			var result = arg1 + arg2;
+			return result;
+		}
+		function sub(arg1, arg2) {  //Функция вычитания
+			var result = arg1 - arg2;
+			return result;
+		}
+		function mul(arg1, arg2) {  //Функция умножения
+			var result = arg1 * arg2;
+			return result;
+		}
+		function truediv(arg1, arg2) {  //Функция деления
+			if (arg2 == 0 || arg2 == -0 || arg2 == +0) {
+				arg2 = Number(prompt("Деление на ноль, введите второй операнд правильно: "));
+			}
+			var result = arg1 / arg2;
+			return result;
+		}
+		function mathOperation(arg1, arg2, operation) {
+						
+			switch (operation) {
+				case "+": 
+					return sum(arg1, arg2); // Возвращаем результат выполнения функции сложения
+					break;
+				case "-":
+					return sub(arg1, arg2); // Возвращаем результат выполнения функции вычитанния
+					break;
+				case "*":
+					return mul(arg1, arg2); // Возвращаем результат выполнения функции умножения
+					break;
+				case "/":
+					return truediv(arg1, arg2); // Возвращаем результат выполнения функции деления
+					break;
+				default:
+					alert("Вы не правильно ввели команду!")
+					calculator();
+			}
+			return result;
+		}
+		function calculator() {
+			var arg1 = Number(prompt("Введите первый операнд: "));
+			var operation = prompt("Введите знак операции +-*/: ");
+			var arg2 = Number(prompt("Введите второй операнд: "));
+
+			alert(mathOperation(arg1, arg2, operation));
+		}
+		calculator();  //Запуск на выполнение функции калькулятора
+	</Script>
+</body>
+</html>

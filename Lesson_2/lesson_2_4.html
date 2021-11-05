@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 4</title>
+</head>
+<body>
+	<Script>
+		"use strict";
+		function sum(x, y) {  //Функция сложения
+			var result = x + y;
+			return result;
+		}
+		function sub(x, y) {  //Функция вычитания
+			var result = x - y;
+			return result;
+		}
+		function mul(x, y) {  //Функция умножения
+			var result = x * y;
+			return result;
+		}
+		function truediv(x, y) {  //Функция деления
+			if (y == 0 || y == -0 || y == +0) {
+				y = Number(prompt("Деление на ноль, введите второй операнд правильно: "));
+			}
+			var result = x / y;
+			return result;
+		}
+
+		function calculator() {
+			var x = Number(prompt("Введите первый операнд: "));
+			var oper_sign =  prompt("Введите знак операции: +-*/: ");
+			var y = Number(prompt("Введите второй операнд: "));
+			
+			switch (oper_sign) {
+				case "+":
+				alert(sum(x, y)); //Сумма
+				break;
+				case "-":
+				alert(sub(x, y)); //Разность
+				break;
+				case "*":
+				alert(mul(x, y)); //Умножение
+				break;
+				case "/":
+				alert(truediv(x, y));  //Деление
+				break;
+				default:
+					alert("Неправильно введен знак операции, повторите: ");
+					calculator();
+			}
+		}
+		calculator();
+	</Script>
+</body>
+</html>
