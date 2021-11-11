@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        class Post {
+
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+
+            edit(text) {
+                this.text = text;
+            }
+        }
+        let post1 = new Post('Leo', 'simple text', new Date());
+        console.log(post1);
+        post1.edit('simple text2');
+        console.log(post1);
+
+        class AttachedPost extends Post {
+
+            constructor(author, text, date) {
+                super(author, text, date);
+                this.highlighted = false;
+            }
+
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+
+        let atPost1 = new AttachedPost('John', 'simple text3', new Date());
+        console.log(atPost1);
+        atPost1.makeTextHighlighted();
+        atPost1.edit('simple text4');
+        console.log(atPost1);
+        
+    </script>
+</body>
+
+</html>

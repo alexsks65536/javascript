@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5 - Вариант 2</title>
+</head>
+<body>
+	<Script>
+		"use strict";
+		function sum() {
+			var result = 0;
+			var calc_str = prompt("Введите вычисляемые операнды со знаком операции, например: 5+3:");
+			let x = Number(calc_str[0]);
+			let operation_sign = calc_str[1];
+			let y = Number(calc_str[2]);
+			switch (operation_sign) {
+				case "+":
+					result = x + y;
+					return result;
+				case "-":
+					result = x - y;
+					return result;
+				case "*":
+					result = x * y;
+					return result;
+				case "/":
+					result = x / y;
+					return result;
+				default:
+					alert("Вы не правильно ввели команду!")
+					sum();
+			}
+			
+		}
+		
+		alert(sum());
+	</Script>
+</body>
+</html>

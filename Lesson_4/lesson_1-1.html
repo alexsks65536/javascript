@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        class numberHundreds {
+
+            constructor(hundreds, tens, units) {
+                this.hundreds = hundreds;
+                this.tens = tens;
+                this.units = units;
+            }
+
+            compute(num) {
+                if (!Number.isInteger(num) || num < 0 || num > 999) {
+                    console.log('Введите число от 0 до 999');
+                    return {};
+                }
+                else {
+                    this.hundreds = Math.floor(num / 100); // сотни
+                    this.tens = Math.floor(num / 10) % 10;  // десятки
+                    this.units = num % 10;  // единицы
+                    console.log('Заданное число: ' + num);
+                    console.log('Сотни: ' + this.hundreds);
+                    console.log('Десятки: ' + this.tens);
+                    console.log('Единицы: ' + this.units);
+                }
+            }
+        }
+
+        let inputNum = new numberHundreds();
+        //inputNum.compute('asd');
+        //inputNum.compute(1024);
+        //inputNum.compute();
+        //inputNum.compute('');
+        inputNum.compute(512);
+    </script>
+</body>
+
+</html>
