@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 6'</title>
+</head>
+<body>
+	<Script>
+		"use strict";
+		function accept(num) {
+			let str = String(num);  //Преобразуем полученное значение в строку
+			let strLength = str.length; //Находим длину строки
+			let symbolEnd = str.charAt(strLength-1); //Находим последний символ
+			let symbolEnd2= str.charAt(strLength-2) + symbolEnd; //Находим два последних символа
+			if (symbolEnd == "1" && num != 11) { // 1 - рубль, но 11 - рублей, 111 - рублей, 10000011 рублей и т.д.
+				return "Ваша сумма " + num + " рубль";
+			}
+			if ((symbolEnd == "2" && symbolEnd2 != "12") || // 2 - рубля, но 12 - рублей, 112 - рублей, 112312312 - рублей и т.д.
+				(symbolEnd == "3" && symbolEnd2 != "13") || // 3 - рубля, но 13 - рублей, или 103 - рубля, 102153 - рубля и т.д.
+				(symbolEnd == "4" && symbolEnd2 != "14")) { // 4 - рубля, но 14 - рублей
+				return "Ваша сумма " + num + " рубля";
+			}
+			else {
+				return "Ваша сумма " + num + " рублей"; // В остальных случаях - рублей
+			}
+		}
+
+		let num = Number(prompt("Введите кол-во денег: "));
+		alert(accept(num));
+
+	</Script>
+</body>
+</html>
